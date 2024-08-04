@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <script src="../../lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="loginContainer">
+        <div class="box-form" id="loginForm">
+            <h1>IVAN原生js后台</h1>
+            <form >
+                <div class="ipt-item">
+                  <label for="username">账号</label>
+                  <input type="text"  class="form-control" id="username" value="admin" required>
+                </div>
+                <div class="ipt-item">
+                  <label for="password" >密码</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password"  value="admin" required>
+                </div>
+                <div class="ipt-item">
+                  <button type="submit" class="btn btn-primary">登录</button>
+                </div>
+              </form>
+
+              <div class="login-warning">
+                用户名密码不匹配
+              </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

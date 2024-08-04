@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>将图片转为base64编码</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 400px;
+            width: 800px;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: #ccc;
+            overflow-wrap: break-word;
+            white-space: pre-wrap; /* 允许换行 */
+           
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" class="ipt">
+    <button onclick="genFn()">生成</button>
+    <button onclick="copyToClipboard()">复制</button>
+    <button onclick="showIframe()">展示图片</button>
+    <div class="box" id="box"></div>
+    <div id="iframeContainer"></div>
+
+    <script>
+        let ipt = document.querySelector(".ipt");
+        function genFn() {
+            let file = ipt.files[0]
+            let fr = new FileReader()
+            //不能直接获取转换结果，转换过程是异步的
+            fr.readAsDataURL(file)
+            fr.onload = function () {
+                console.log(fr.result)
+                box.innerHTML = fr.result;
+            }
+        }
+
+        function copyToClipboard() {
+            const content = document.getElementById('box').textContent;
+
+            // 使用 Clipboard API 将内容复制到剪贴板
+            navigator.clipboard.writeText(content)
+                .then(() => {
+                    alert('内容已复制到剪贴板');
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        }
+
+        function showIframe() {
+            const iframeContainer = document.getElementById('iframeContainer');
+            const content = document.getElementById('box').textContent;
+            // 创建一个新的 iframe 元素
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', content); // 设置 iframe 的 src 属性
+
+            // 设置 iframe 的样式
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none'; // 可选：去除边框
+            // 将 iframe 添加到容器中
+            iframeContainer.innerHTML = ''; // 清空容器内容（确保每次点击按钮时只显示一个 iframe）
+            iframeContainer.appendChild(iframe);
+        }
+    </script>
+</body>
+
+</html>

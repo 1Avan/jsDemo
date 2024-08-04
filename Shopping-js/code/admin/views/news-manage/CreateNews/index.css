@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html,
+.home-page {
+  height: 100%;
+}
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+.home-page .header {
+  width: 100%;
+  height: 50px;
+  background-color: #ccc;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+}
+.home-page .content {
+  margin-top: 80px;
+  flex: 1;
+}
+.content-center {
+  padding: 12px;
+}
+.content-center .maincontent {
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

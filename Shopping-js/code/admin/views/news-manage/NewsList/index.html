@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="/admin/lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+  <script src="/admin/lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+  <div class="home-page">
+    <div class="header">
+    </div>
+    <div class="content">
+      <div style="width: 100%;">
+        <div class="row" style="width: 100%;">
+          <div class="col-2 sidemenu">
+            Column
+          </div>
+          <div class="col-10 content-center ">
+            <div class="maincontent">
+              <!-- 面包屑 -->
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" aria-current="page">新闻管理</li>
+                  <li class="breadcrumb-item active" aria-current="page">新闻列表</li>
+                </ol>
+              </nav>
+              <!-- 表格区域 -->
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">标题</th>
+                    <th scope="col">类别</th>
+                    <th scope="col">操作</th>
+                  </tr>
+                </thead>
+                <tbody id="newsList"">
+                </tbody>
+              </table>
+
+              <!-- Modal图层用来显示编辑表单 -->
+              <div class="modal fade" id="previewModalLabel" tabindex="-1" aria-labelledby="previewModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="contentTitle">文章标题</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body mainContent">
+                      <!-- 文章内容 -->
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./index.js" type="module"></script>
+
+</html>

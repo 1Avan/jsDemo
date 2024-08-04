@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="/admin/lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+  <script src="/admin/lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="./index.js" type="module"></script>
+  <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+  <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+  <style>
+    #editor—wrapper {
+      border: 1px solid #ccc;
+      z-index: 100;
+      /* 按需定义 */
+    }
+
+    #toolbar-container {
+      border-bottom: 1px solid #ccc;
+    }
+
+    #editor-container {
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="home-page">
+    <div class="header">
+    </div>
+    <div class="content">
+      <div style="width: 100%;">
+        <div class="row" style="width: 100%;">
+          <div class="col-2 sidemenu">
+            <!-- 动态渲染菜单 -->
+          </div>
+          <div class="col-10 content-center">
+            <div class="maincontent">
+              <!-- 面包屑 -->
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" aria-current="page">新闻管理</li>
+                  <li class="breadcrumb-item active" aria-current="page">编辑新闻</li>
+                </ol>
+              </nav>
+
+              <!-- 表单区域 -->
+              <form id="addNewsForm">
+                <div class="mb-3">
+                  <label for="title" class="form-label">标题</label>
+                  <input type="text" class="form-control" id="title" required placeholder="请输入标题">
+                </div>
+
+                <div class="mb-3">
+                  <label for="introduction" class="form-label">内容</label>
+                  <div id="content" style="border: 1px solid #dee2e6;">
+                    <div id="toolbar-container"><!-- 工具栏 --></div>
+                    <div id="editor-container"><!-- 编辑器 --></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="type" class="form-label">类别</label>
+                  <select name="type" id="type" class="form-select" aria-label="Default select example">
+                    <option value="1">最新动态</option>
+                    <option value="2">通知公告</option>
+                    <option value="3">沸点</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="photo" class="form-label">封面</label>
+                  <img src="" class="img-thumbnail" alt="" id="photoImg" style="width: 100px;height: 100px;">
+                  <input  type="file" id="photo" style="display: none;">
+                </div>
+
+                <button type="submit" class="btn btn-primary">更新新闻</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+</html>
