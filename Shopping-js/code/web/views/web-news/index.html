@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新闻中心</title>
+  <link rel="stylesheet" href="../../lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+  <script src="../../lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="home-page">
+    <div class="header">
+      <!-- 这里是js动态导入 -->
+    </div>
+    <div class="content">
+      <div class="newsbg">
+        <div class="form-floating searchbox">
+          <input type="text" class="form-control" id="search" placeholder="Password">
+          <label for="search">这里有你想要知道的一切~</label>
+          <ul class="list-group">
+            <!-- 动态渲染 -->
+            <!-- <li class="list-group-item">An item</li> -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- 列表展示新闻区 -->
+      <div class=" text-center">
+        <div class="row hotList">
+          <!-- 动态渲染 -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+<script src="./index.js" type="module"></script>
+
+</html>
