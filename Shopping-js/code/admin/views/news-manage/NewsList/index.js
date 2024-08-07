@@ -1,5 +1,6 @@
 //引入模块
 import {load} from "/admin/utils/LoadView.js"
+import {curserverUrl} from "/admin/config/config.js"
 load("sidemenu-newsList")
 
 
@@ -11,7 +12,7 @@ let list = []
 const myPreviewModal = new bootstrap.Modal(document.getElementById('previewModalLabel'))
 async function ListItemRender() {
     newsList.innerHTML = ""//移除所有子元素
-    let url = new URL("http://localhost:3000/news");
+    let url = new URL(curserverUrl+"/news");
     url.searchParams.append("author",JSON.parse(localStorage.getItem("token")).username);
 
     const news = await fetch(url.toString()).then(res => res.json())
@@ -63,7 +64,7 @@ document.querySelector(".table").onclick = async (e)=>{
     }
 }
 const deleteNews = async (id) => {
-    const res = await fetch(`http://localhost:3000/news/${id}`, {
+    const res = await fetch(`${curserverUrl}/news/${id}`, {
         method: "DELETE"
     })
     if (res.ok) {

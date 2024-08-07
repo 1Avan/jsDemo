@@ -1,15 +1,16 @@
+import {curserverUrl} from "/admin/config/config.js"
 loginForm.onsubmit = async function (event) {
     
     event.preventDefault()
     // alert("登录")
 
-    console.log(username.value, password.value)
+    console.log(`${curserverUrl}/users?username=${username.value}&password=${password.value}`)
 
     //用户
     let user = {};
     //json-server get请求获取
     const data = await fetch(
-        `http://localhost:3000/users?username=${username.value}&password=${password.value}`,
+        `${curserverUrl}/users?username=${username.value}&password=${password.value}`,
         {
             method: 'GET'
             ,

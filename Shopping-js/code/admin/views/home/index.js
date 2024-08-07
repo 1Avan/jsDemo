@@ -1,4 +1,5 @@
-//引入模块
+//引入模块在script标签上type=module开启了es6模块
+import {curserverUrl} from "/admin/config/config.js"
 import { load } from "/admin/utils/LoadView.js"
 load("sidemenu-home")//加载topbar，sidemenu
 
@@ -60,7 +61,7 @@ myChart.setOption(option);
 
 
 async function analysis() {
-    let res = await fetch(`http://localhost:3000/news?author=${user.username}`).then(res=>res.json())
+    let res = await fetch(`${curserverUrl}/news?author=${user.username}`).then(res=>res.json())
     console.log(res);
     // 根据分类搞成数组
     let map = {};

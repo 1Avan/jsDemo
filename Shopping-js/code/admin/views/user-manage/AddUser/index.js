@@ -1,5 +1,6 @@
 //引入模块
 import { load } from "/admin/utils/LoadView.js"
+import  {curserverUrl} from "/admin/config/config.js"
 load("sidemenu-addUser")
 
 addUserForm.onsubmit = async function (e) {
@@ -26,7 +27,7 @@ addUserForm.onsubmit = async function (e) {
     });
     //json-server post请求添加用户
     const data = await fetch(
-        `http://localhost:3000/users`,
+        `${curserverUrl}/users`,
         {
             method: 'POST',
             body: JSON.stringify({

@@ -1,12 +1,13 @@
 //引入模块
 import { load } from "/admin/utils/LoadView.js"
+import  {curserverUrl} from "/admin/config/config.js"
 load("sidemenu-userList")
 //将列表渲染出来
 
 async function ListItemRender() {
     let userList = document.querySelector("#userList")
     userList.innerHTML = ""//移除所有子元素
-    const users = await fetch("http://localhost:3000/users").then(res => res.json())
+    const users = await fetch(curserverUrl+"/users").then(res => res.json())
     console.log(users);
     users.forEach((item, index) => {
         let tr = document.createElement("tr")
@@ -52,7 +53,7 @@ userList.onclick = async (event) => {
         const myModal = new bootstrap.Modal(document.getElementById('editForm'))
         myModal.toggle()//改变modal的显示状态，相当于开关可以开可以关
         //将当前点击用户的用户信息回显
-        const res = await fetch(`http://localhost:3000/users/${currentId}`).then(
+        const res = await fetch(`${curserverUrl}/users/${currentId}`).then(
             res => res.json()
         )
         username.value = res.username;
@@ -72,7 +73,7 @@ userList.onclick = async (event) => {
             };
             console.log(params)
             const res = await fetch(
-                `http://localhost:3000/users/${currentId}`, {
+                `${curserverUrl}/users/${currentId}`, {
                 method: "PUT",
                 body: JSON.stringify(params),
                 headers: {
@@ -90,7 +91,7 @@ userList.onclick = async (event) => {
     } else if (event.target.className.includes("btn-del")) {
         // console.log("del");
         //删除用户
-        const res = await fetch(`http://localhost:3000/users/${currentId}`, {
+        const res = await fetch(`${curserverUrl}/users/${currentId}`, {
             method: "DELETE"
         })
         if (res.ok) {

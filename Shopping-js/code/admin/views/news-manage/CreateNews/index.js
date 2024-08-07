@@ -1,8 +1,7 @@
 //引入模块
 import { load } from "/admin/utils/LoadView.js"
+import {curserverUrl} from "/admin/config/config.js"
 load("sidemenu-addNews")
-
-
 const { createEditor, createToolbar } = window.wangEditor
 
 const editorConfig = {
@@ -17,7 +16,7 @@ const editorConfig = {
 }
 
 editorConfig.MENU_CONF['uploadImage'] = {
-  server: 'http://localhost:3000/upload', // 上传图片地址
+  server: curserverUrl+'/upload', // 上传图片地址
   // server: 'http://106.12.198.214:3000/api/upload-img-10s', // 用于测试 timeout
   // server: 'http://106.12.198.214:3000/api/upload-img-failed', // 用于测试 failed
   // server: 'http://106.12.198.214:3000/api/xxx', // 用于测试 404
@@ -121,7 +120,7 @@ form.onsubmit = async function (e) {
   )
 
   let res = await fetch(
-    `http://localhost:3000/news`,
+    `${curserverUrl}/news`,
     {
       method: 'POST',
       body: JSON.stringify({

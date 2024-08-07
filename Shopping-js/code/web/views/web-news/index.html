@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
   <script src="../../lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="index.css">
+  <script src="/web/lib/loadsh.js"></script>
 </head>
 
 <body>
@@ -33,6 +34,33 @@
           <!-- 动态渲染 -->
         </div>
       </div>
+      <div class="newsTabs">
+        <hr>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">最新公告</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">典型案例</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">沸点</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+            <!-- <ul class="list-group" id="list-news-ul">
+              <a href="/web/views/detail/index.html?id=">
+                <li class="list-group-item" style="height: 100px; padding: 2px;display: flex;">
+                  <img src="http://localhost:3000/1.jpg" class="img-thumbnail" style="height: 100px;width: 200px; margin-right: 20px;" >
+                  <div class="text-content" style="width: 400px;overflow: hidden;text-overflow:ellipsis;">
+                    <p class="fw-bold">Bold text.</p>
+                    <p class="fw-lighter">Lighter weight text (relative to the parent element).11111111111111111111111111111111111111111111111111111111111</p>
+                  </div>
+                  <div style="display: flex; align-items: end;margin-left: 10px;"><p class="fst-italic" style="margin-bottom:0px">作者：</p></div>
+                </li>
+              </a>
+            </ul> -->
+          </div>
+          <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">.222</div>
+          <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">333</div>
+        </div>
 
     </div>
   </div>

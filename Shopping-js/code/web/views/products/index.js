@@ -1,12 +1,13 @@
 //引入模块
 import { load } from "/web/utils/LoadView.js"
+import  {curserverUrl} from "/admin/config/config.js"
 load("products")//加载topbar
 
 
 let mainBox = document.querySelector("#main-carousel")
 async function getImage() {
     mainBox.innerHTML = "";
-    let imgs = await fetch("http://localhost:3000/products").then(res => res.json())
+    let imgs = await fetch(curserverUrl+"/products").then(res => res.json())
     console.log(imgs);
     //动态生成底部按钮
     let indicators = document.querySelector(".carousel-indicators")
